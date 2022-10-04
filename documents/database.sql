@@ -1,4 +1,5 @@
 CREATE DATABASE `HealthyFarm` /*!40100 DEFAULT CHARACTER SET utf8mb4 */;
+USE `HealthyFarm`;
 
 CREATE TABLE `Animal` (
   `id` int(11) NOT NULL AUTO_INCREMENT,

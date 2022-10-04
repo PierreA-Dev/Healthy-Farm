@@ -1,0 +1,8 @@
+dans le dossier backend en ligne de commande
+
+py -3 -m venv venv
+venv\scripts\activate.ps1
+pip install -r requirements.txt
+flask init_db
+$env:FLASK_DEBUG
+flask run
