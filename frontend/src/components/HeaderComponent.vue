@@ -15,9 +15,6 @@
     </div>
   </div>
   <div class=col-1>
-    <img class='icons' src='@/assets/help.png'>
-  </div>
-  <div class=col-1>
     <img class='icons' src='@/assets/notif.png'>
   </div>
   <div class=col-1>
