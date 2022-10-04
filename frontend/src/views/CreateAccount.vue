@@ -46,10 +46,7 @@
   
     <div class='row' style='margin-top:1.2em'>
       <div class='col-6'>
-        <p>Mot de passe oublié ?</p>
-      </div>
-      <div class='col-6'>
-        <router-link to='/login' style='textDecoration: none; color: black'>Se connecter</router-link>
+        <router-link to='/' style='textDecoration: none; color: black'>Se connecter</router-link>
       </div>
     </div>
   </div>
