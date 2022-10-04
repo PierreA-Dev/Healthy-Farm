@@ -1,5 +1,5 @@
 <template>
-  <div class='container'>
+  <div class='container' style='margin-top: 20%;'>
     <div class="row">
       <div class="col">
         <img class='icon' src="@/assets/chicken_icon.png">
@@ -70,17 +70,19 @@ export default {
   }
   .title {
     color:#32A287;
-    text-shadow: 1px 1px 2px grey;
     font-family:'Source Sans Pro', sans-serif;
-    font-size: 250%;
+    font-size: 280%;
     font-weight:600;
+    line-height: 50px;
   }
   .text-light{
     font-size:1em;
-    color: #000000;
-    text-shadow: 1px 1px 2px grey;
+    color: rgba(0, 0, 0, 0.57);
     font-family:'Source Sans Pro', sans-serif;
     font-weight:300;
+    font-size: 120%;
+    font-style:normal;
+    line-height: 25px;
   }
 
   .text-regular{
