@@ -1,20 +1,9 @@
 <template>
-  <div class='container' style='margin-top: 20%;'>
-    <div class="row">
-      <div class="col">
-        <img class='icon' src="@/assets/chicken_icon.png">
-      </div>
-    </div>
+  <div class='container' style='margin-top: 35%;'>
 
     <div class="row">
       <div class="col">
-        <h1 class='title'>Bienvenue</h1>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col">
-        <p class='text-light'>Connectez vous à Healthy'Farm</p>
+        <h1 class='title'>Inscription</h1>
       </div>
     </div>
 
@@ -37,11 +26,21 @@
           <i @click='showPassword' class="far fa-eye" id="togglePassword" style='margin:-15%'></i>
         </div>
       </div>
+
+      <div class="row">
+        <div class="col-12 labels">
+          <label class="text-regular" for="password">Confirmation du mot de passe</label>
+        </div>
+        <div class='col-12' style='margin-left:-15%; width:103%;'>
+          <input class='input' id='password' type='password' name='password'>
+          <i @click='showPassword' class="far fa-eye" id="togglePassword" style='margin:-15%'></i>
+        </div>
+      </div>
     </div>
 
     <div class='row' style='margin-top:1.2em'>
       <div class='col-12'>
-        <button class='button' type='submit'>Connexion</button>
+        <button class='button' type='submit'>S'inscrire</button>
       </div>
     </div>
   
@@ -50,7 +49,7 @@
         <p>Mot de passe oublié ?</p>
       </div>
       <div class='col-6'>
-        <router-link to='/create-account' style='textDecoration: none; color: black'>Créer un compte</router-link>
+        <router-link to='/login' style='textDecoration: none; color: black'>Se connecter</router-link>
       </div>
     </div>
   </div>
@@ -58,7 +57,7 @@
 
 <script>
 export default {
-	name: "LoginView",
+	name: "CreateAccount",
 
   methods:{
     showPassword(){
