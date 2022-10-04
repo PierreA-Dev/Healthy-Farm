@@ -3,6 +3,7 @@ from flask import Flask
 from playhouse.flask_utils import FlaskDB
 from peewee import *
 import click
+import flask_login
 
 
 app = Flask(__name__)
@@ -14,7 +15,7 @@ app.config.from_object(__name__)
 db_wrapper = FlaskDB(app)
 
 
-# definition des classes
+# définition des classes
 class User(db_wrapper.Model):
     email = CharField(unique=True)
     password = CharField()
@@ -26,27 +27,30 @@ class Building(db_wrapper.Model):
     zone = CharField()
 
 class Animal(db_wrapper.Model):
-    email = CharField(unique=True)
-    number = FloatField()
+    number = IntegerField()
     arrived = DateTimeField(default=datetime.now)
     left = DateTimeField()
+    id_building = ForeignKeyField(Building, backref='building')
 
 class Data(db_wrapper.Model):
     temperature = FloatField()
-    heart_rate = FloatField()
+    heart_rate = IntegerField()
     lat = FloatField()
     long = FloatField()
     id_animal = ForeignKeyField(Animal, backref='animal')
 
-
-# login_manager.init_app(app)
-# login_manager.login_view = "login_api.login"
+login_manager = flask_login.LoginManager()
+login_manager.init_app(app)
 
 #Import des blueprints
 from route.index import index_api
+from route.login import login_api
+from route.animalList import AnimalList_api
 
 
 app.register_blueprint(index_api)
+app.register_blueprint(login_api)
+app.register_blueprint(AnimalList_api)
 
 @app.cli.command("init_db")
 def init_db():
