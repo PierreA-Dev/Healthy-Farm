@@ -5,6 +5,7 @@ from playhouse.flask_utils import FlaskDB
 from peewee import *
 import click
 import flask_login
+from flask_cors import CORS
 
 
 app = Flask(__name__)
@@ -13,6 +14,7 @@ DATABASE = 'sqlite:///healthyfarm.db'
 SECRET_KEY = 'secret_key'
 
 app = Flask(__name__)
+CORS(app)
 app.config.from_object(__name__)
 db_wrapper = FlaskDB(app)
 

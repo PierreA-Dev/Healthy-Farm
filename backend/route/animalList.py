@@ -1,6 +1,9 @@
+from pickle import TRUE
 from flask import Blueprint, jsonify
+from sqlalchemy import true
 from app import Animal
 from flask_cors import cross_origin
+from playhouse.shortcuts import model_to_dict
 
 AnimalList_api = Blueprint('AnimalList_api', __name__)
 
@@ -11,7 +14,9 @@ def animal_list():
 
     query = Animal.select()
     list=[]
-    for q in query:
-        list = list.append(q)
+    """query.to_dict()"""
+    for data in query :
+        d= model_to_dict(data)
+        list.append(d)
 
     return jsonify(list)
