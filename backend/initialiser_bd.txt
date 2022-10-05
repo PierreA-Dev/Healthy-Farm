@@ -1,5 +1,3 @@
-dans le dossier backend en ligne de commande
-
 py -3 -m venv venv
 venv\scripts\activate.ps1
 pip install -r requirements.txt

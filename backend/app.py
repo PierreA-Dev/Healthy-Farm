@@ -1,5 +1,6 @@
 from datetime import datetime
 from flask import Flask
+from flask_cors import CORS
 from playhouse.flask_utils import FlaskDB
 from peewee import *
 import click
@@ -7,6 +8,7 @@ import flask_login
 
 
 app = Flask(__name__)
+CORS(app)
 DATABASE = 'sqlite:///healthyfarm.db'
 SECRET_KEY = 'secret_key'
 
