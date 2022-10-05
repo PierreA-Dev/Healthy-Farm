@@ -1,0 +1,3 @@
+poule 13 : températures 49
+poule 10 : rythme haut 200
+poule 30 : mort 15t tempé et 0
