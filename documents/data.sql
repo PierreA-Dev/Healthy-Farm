@@ -37,7 +37,7 @@ insert into animal (id, number, arrived, left, id_building_id) values (29, 130, 
 insert into animal (id, number, arrived, left, id_building_id) values (30, 111, '2021-04-07 00:24:36', '2021-03-03 22:58:07', 4);
 
 insert into data (id, temperature, heart_rate, id_animal_id, lat, long) values (1, 41, 153, 1, 44.36076396168165, 0.055926333509343444);
-insert into data (id, temperature, heart_rate, id_animal_id, lat, long) values (2, 43, 165, 10, 44.361493, 0.055760);
+insert into data (id, temperature, heart_rate, id_animal_id, lat, long) values (2, 43, 200, 10, 44.361493, 0.055760);
 insert into data (id, temperature, heart_rate, id_animal_id, lat, long) values (3, 41, 154, 28, 44.361155, 0.056731);
 insert into data (id, temperature, heart_rate, id_animal_id, lat, long) values (4, 42, 164, 19, 44.361155, 0.056740);
 insert into data (id, temperature, heart_rate, id_animal_id, lat, long) values (5, 41, 169, 28, 44.360858, 0.057136);
@@ -45,7 +45,7 @@ insert into data (id, temperature, heart_rate, id_animal_id, lat, long) values (
 insert into data (id, temperature, heart_rate, id_animal_id, lat, long) values (7, 41, 151, 23, 44.360782, 0.057522);
 insert into data (id, temperature, heart_rate, id_animal_id, lat, long) values (8, 42, 165, 7, 44.361050, 0.057672);
 insert into data (id, temperature, heart_rate, id_animal_id, lat, long) values (9, 49, 153, 13, 44.360920, 0.057340);
-insert into data (id, temperature, heart_rate, id_animal_id, lat, long) values (10, 43, 170, 30, 44.360636, 0.057383);
+insert into data (id, temperature, heart_rate, id_animal_id, lat, long) values (10, 43, 0, 30, 44.360636, 0.057383);
 insert into data (id, temperature, heart_rate, id_animal_id, lat, long) values (11, 43, 159, 16, 44.360981, 0.057297);
 insert into data (id, temperature, heart_rate, id_animal_id, lat, long) values (12, 41, 163, 25, 44.361242, 0.057726);
 insert into data (id, temperature, heart_rate, id_animal_id, lat, long) values (13, 43, 152, 9, 44.360574, 0.057919);
@@ -62,7 +62,7 @@ insert into data (id, temperature, heart_rate, id_animal_id, lat, long) values (
 insert into data (id, temperature, heart_rate, id_animal_id, lat, long) values (24, 42, 157, 20, 44.361717, 0.054325);
 insert into data (id, temperature, heart_rate, id_animal_id, lat, long) values (25, 43, 158, 2, 44.361756, 0.055634);
 insert into data (id, temperature, heart_rate, id_animal_id, lat, long) values (26, 43, 152, 3, 44.361418, 0.055494);
-insert into data (id, temperature, heart_rate, id_animal_id, lat, long) values (27, 43, 200, 10, 44.361947, 0.056159);
+insert into data (id, temperature, heart_rate, id_animal_id, lat, long) values (27, 43, 160, 10, 44.361947, 0.056159);
 insert into data (id, temperature, heart_rate, id_animal_id, lat, long) values (28, 42, 154, 20, 44.361825, 0.055365);
 insert into data (id, temperature, heart_rate, id_animal_id, lat, long) values (29, 42, 150, 14, 44.361618, 0.055344);
 insert into data (id, temperature, heart_rate, id_animal_id, lat, long) values (30, 43, 151, 3, 44.360505, 0.057039);
