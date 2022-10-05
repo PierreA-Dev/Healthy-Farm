@@ -1,5 +1,4 @@
-from asyncio.windows_events import NULL
-from flask import Blueprint, jsonify, request
+from flask import Blueprint, jsonify, request, abort
 from app import Animal, Data
 from flask_cors import cross_origin
 from playhouse.shortcuts import model_to_dict
@@ -11,14 +10,13 @@ AnimalList_api = Blueprint('AnimalList_api', __name__)
 def animal_list():
     """ Renvoie la liste des animaux """
 
-    query = Animal.select()
-    list=[]
-    """query.to_dict()"""
+    query = Data.select().group_by(Data.id_animal)
+    list_animals=[]
     for data in query :
-        d= model_to_dict(data)
-        list.append(d)
+            d= model_to_dict(data)
+            list_animals.append(d)
 
-    return jsonify(list)
+    return jsonify(list_animals)
 
 @AnimalList_api.route("/mon_animal")
 @cross_origin()
@@ -27,8 +25,13 @@ def get_animal():
     id=1
     # id = request.args.get('animal_id')
 
-    temperature_moy = NULL
-    heart_rate_moy = NULL
+    try:
+        id= Animal.select().where(Animal.id == id).get_or_none()
+    except Exception:
+        return abort(404)
+
+    temperature_moy = 0
+    heart_rate_moy = 0
 
     all = Data.select().where(Data.id_animal == id)
     query = Data.select().where(Data.id_animal == id).order_by(Data.id.desc()).get()
