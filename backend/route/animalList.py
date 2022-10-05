@@ -1,5 +1,6 @@
+from asyncio.windows_events import NULL
 from flask import Blueprint, jsonify, request
-from app import Animal
+from app import Animal, Data
 from flask_cors import cross_origin
 from playhouse.shortcuts import model_to_dict
 
@@ -26,8 +27,26 @@ def get_animal():
     id=1
     # id = request.args.get('animal_id')
 
-    query = Animal.select().where(Animal.id == id).get()
+    temperature_moy = NULL
+    heart_rate_moy = NULL
 
-    print(jsonify(model_to_dict(query)))
+    all = Data.select().where(Data.id_animal == id)
+    query = Data.select().where(Data.id_animal == id).order_by(Data.id.desc()).get()
+    list =[]
 
-    return jsonify(model_to_dict(query))
+    if query.temperature < 41 or query.temperature > 43 or query.heart_rate > 170:
+        is_sick = True
+    else:
+        is_sick = False
+    
+    list.append(model_to_dict(query))
+    list.append(is_sick)
+    
+    for d in all:
+        temperature_moy += d.temperature
+        heart_rate_moy += d.heart_rate
+
+    list.append(temperature_moy/ len(all))
+    list.append(heart_rate_moy/ len(all))
+
+    return jsonify(list)
