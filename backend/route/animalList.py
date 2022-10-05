@@ -22,11 +22,11 @@ def animal_list():
 @cross_origin()
 def get_animal():
     """ Renvoie la page d'un animal """
-    id=1
+    id=100
     # id = request.args.get('animal_id')
 
     try:
-        id= Animal.select().where(Animal.id == id).get_or_none()
+        id= Animal.get(Animal.id == id)
     except Exception:
         return abort(404)
 
