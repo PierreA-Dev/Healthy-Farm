@@ -13,8 +13,15 @@ def animal_list():
     query = Data.select().group_by(Data.id_animal)
     list_animals=[]
     for data in query :
+
             d= model_to_dict(data)
             list_animals.append(d)
+
+            if data.temperature < 41 or data.temperature > 43 or data.heart_rate > 170 or data.heart_rate < 150:
+                is_sick = True
+            else:
+                is_sick = False
+            list_animals.append(is_sick)
 
     return jsonify(list_animals)
 
@@ -22,7 +29,7 @@ def animal_list():
 @cross_origin()
 def get_animal():
     """ Renvoie la page d'un animal """
-    id=100
+    id=1
     # id = request.args.get('animal_id')
 
     try:
@@ -37,7 +44,7 @@ def get_animal():
     query = Data.select().where(Data.id_animal == id).order_by(Data.id.desc()).get()
     list =[]
 
-    if query.temperature < 41 or query.temperature > 43 or query.heart_rate > 170:
+    if query.temperature < 41 or query.temperature > 43 or query.heart_rate > 170 or query.heart_rate < 150:
         is_sick = True
     else:
         is_sick = False
