@@ -1,6 +1,4 @@
-from pickle import TRUE
-from flask import Blueprint, jsonify
-from sqlalchemy import true
+from flask import Blueprint, jsonify, request
 from app import Animal
 from flask_cors import cross_origin
 from playhouse.shortcuts import model_to_dict
@@ -20,3 +18,16 @@ def animal_list():
         list.append(d)
 
     return jsonify(list)
+
+@AnimalList_api.route("/mon_animal")
+@cross_origin()
+def get_animal():
+    """ Renvoie la page d'un animal """
+    id=1
+    # id = request.args.get('animal_id')
+
+    query = Animal.select().where(Animal.id == id).get()
+
+    print(jsonify(model_to_dict(query)))
+
+    return jsonify(model_to_dict(query))
