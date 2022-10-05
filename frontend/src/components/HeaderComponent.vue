@@ -3,7 +3,7 @@
   <div class="container-fluid">
   <div class='row'>
     <div class='col-3'>
-      <button class="navbar-toggler dropDownButton" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler dropDownButton" type="button" aria-hidden="true" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
     </div>
@@ -26,10 +26,34 @@
    <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Animaux</a>
+          <router-link to='/' class="nav-link active">Liste des poules</router-link>
+        </li>
+        <li class="nav-item">
+          <router-link to='/' class="nav-link active">Guides</router-link>
+        </li>
+        <li class="nav-item">
+          <router-link to='/' class="nav-link active">Gestion du compte</router-link>
+        </li>
+        <li class="nav-item">
+          <router-link to='/' class="nav-link active">Préférences de notification</router-link>
         </li>
         <li class="nav-item">
           <router-link to='/' class="nav-link active">Déconnexion</router-link>
+        </li>
+        <li>
+          Sepatatorrorororoor
+        </li>
+        <li>
+          <router-link to='/' class="nav-link active">Centre d'aide et d'information</router-link>
+        </li>
+        <li>
+          <router-link to='/' class="nav-link active">Politique de confidentialité</router-link>
+        </li>
+        <li>
+          <router-link to='/' class="nav-link active">Conditions générales d'utilisation</router-link>
+        </li>
+        <li>
+          <p>Version: 1.0</p>
         </li>
       </ul>
     </div>
