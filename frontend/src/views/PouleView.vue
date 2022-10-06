@@ -1,12 +1,12 @@
 <template>
 <HeaderComponent />
-<table>
+<table style='margin-top:5%'>
   <thead class='tableHead'>
     <tr>
-      <th>ID</th>
-      <th>Température</th>
-      <th>Fréquence cardiaque</th>
-      <th></th>
+      <th class='colone1'>ID</th>
+      <th class='colone'>Température</th>
+      <th class='colone'>Fréquence cardiaque</th>
+      <th class='colone'></th>
     </tr>
   </thead>
   <tbody>
@@ -14,7 +14,7 @@
       <td>{{poule.id_animal.id}}</td>
       <td>{{poule.temperature}}</td>
       <td>{{poule.heart_rate}}</td>
-      <td><router-link to='/infopoule/{{poule.id_animal.id}}'>Voir plus</router-link></td>
+      <td><button @click='gotoInfoPoule(poule.id_animal.id)'>Voir plus</button></td>
     </tr>
   </tbody>
 </table>
@@ -51,6 +51,9 @@ export default {
         console.log(error);
       }
     },
+    gotoInfoPoule(id) {
+      this.$router.push('/infopoule/'+ id)
+    }
   },
 }
 
@@ -61,15 +64,27 @@ export default {
   background-color: red;
 }
 .isHappy{
-  border-top: solid black
+  border-top: 1px solid black;
+  margin: 10%;
 
 }
+.colone1{
+  padding-inline: 20px;
+}
+.colone{
+  padding-inline: 7px;
+  padding: 7px;
+}
+
 .tableHead{
-
+  font-size: 0.9em;
 }
 
-.tableBody{
-  
+button{
+  border-radius:12px;
+  min-width:123%;
+  margin-left: -25%;
 }
+
 
 </style>

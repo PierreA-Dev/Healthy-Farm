@@ -80,21 +80,6 @@ export default {
     font-weight:600;
     line-height: 50px;
   }
-  .text-light{
-    font-size:1em;
-    color: rgba(0, 0, 0, 0.57);
-    font-family:'Source Sans Pro', sans-serif;
-    font-weight:300;
-    font-size: 120%;
-    font-style:normal;
-    line-height: 25px;
-  }
-
-  .text-regular{
-    font-size: 0.9em;
-    font-family: 'Source Sans Pro', sans-serif;
-    font-weight:600;
-  }
 
   .labels{
     text-align: left;

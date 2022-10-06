@@ -3,6 +3,9 @@ import DashBoard from '../views/DashBoard.vue'
 import CreateAccount from '../views/CreateAccount.vue'
 import PouleView from '../views/PouleView.vue'
 import InfoPouleView from '../views/pouleInfoView.vue'
+import NotFound from '../views/NotFound.vue'
+import GuideView from '../views/GuideView.vue'
+import ConditionsView from '../views/ConditionsView.vue'
 
 const routes = [{
         path: '/dashboard',
@@ -15,14 +18,25 @@ const routes = [{
         component: PouleView
     },
     {
-        path: '/infopoule/:id',
+        path: '/infopoule/:pouleId',
         name: 'infopoule',
-        component: InfoPouleView
+        component: InfoPouleView,
+        props: true
     },
     {
         path: '/create-account',
         name: 'createAccount',
         component: CreateAccount
+    },
+    {
+        path: '/guide',
+        name: 'guide',
+        component: GuideView
+    },
+    {
+        path: '/conditions',
+        name: 'conditions',
+        component: ConditionsView
     },
     {
         path: '/',
@@ -32,7 +46,8 @@ const routes = [{
         // which is lazy-loaded when the route is visited.
         component: () =>
             import ( /* webpackChunkName: "about" */ '../views/LoginView.vue')
-    }
+    },
+    { path: '/:pathMatch(.*)*', name: 'NotFound', component: NotFound },
 ]
 
 const router = createRouter({

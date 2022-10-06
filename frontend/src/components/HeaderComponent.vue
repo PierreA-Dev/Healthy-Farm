@@ -29,7 +29,7 @@
 							<li class="nav-item">
 								<div class="card specialCard">
 									<div class="card-header">
-										<router-link to="/" class="nav-link active text-regular"
+										<router-link to="/guide" class="nav-link active text-regular"
 											><img class="icon-menu" src="@/assets/help.png" />Guides</router-link
 										>
 									</div>
@@ -74,7 +74,7 @@
 								>
 							</li>
 							<li>
-								<router-link to="/" class="nav-link active otherLinks"
+								<router-link to="/conditions" class="nav-link active otherLinks" style='color:black;'
 									>Conditions générales d'utilisation</router-link
 								>
 							</li>

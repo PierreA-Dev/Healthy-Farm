@@ -29,12 +29,28 @@
 
 <script>
 import HeaderComponent from "@/components/HeaderComponent";
-import CarouselComponent from "@/components/CarouselComponent"
+import CarouselComponent from "@/components/CarouselComponent";
+import axios from 'axios';
 
 export default {
 	components: { HeaderComponent, CarouselComponent },
 	name: "DashBoard",
 	created(){
+
+	},
+	methods: {
+		async getPoules () {
+      try{
+        const res = await axios.get("http://127.0.0.1:5000/liste_des_animaux", {
+            headers: {
+              "Access-Control-Allow-Origin": "*",
+            },
+          })
+        this.poules = res.data   
+      } catch (error){
+        console.log(error);
+      }
+    },
 	}
 }
 </script>

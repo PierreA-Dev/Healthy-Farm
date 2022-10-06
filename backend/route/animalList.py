@@ -29,13 +29,13 @@ def animal_list():
 @cross_origin()
 def get_animal():
     """ Renvoie la page d'un animal """
-    id=1
-    # id = request.args.get('animal_id')
+    #id=1
+    id = request.args.get('id')
 
     try:
         id= Animal.get(Animal.id == id)
     except Exception:
-        return abort(404)
+        return '404', 404
 
     temperature_moy = 0
     heart_rate_moy = 0
@@ -51,13 +51,13 @@ def get_animal():
     
     dict = model_to_dict(query)
     dict['is_sick'] = is_sick
-    list.append(dict)
+    
     
     for d in all:
         temperature_moy += d.temperature
         heart_rate_moy += d.heart_rate
-
-    list.append(temperature_moy/ len(all))
-    list.append(heart_rate_moy/ len(all))
+    dict['temperature_moy'] = temperature_moy/ len(all)
+    dict['heart_rate_moy'] = heart_rate_moy/ len(all)
+    list.append(dict)
 
     return jsonify(list)

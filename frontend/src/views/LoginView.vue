@@ -41,7 +41,7 @@
 
     <div class='row' style='margin-top:1.2em'>
       <div class='col-12'>
-        <button class='button' type='submit'><router-link to='/DashBoard#goUp'>Connexion</router-link></button>
+        <button class='button' type='submit'><router-link to='/DashBoard#goUp' style='color:#FFFFFF; font-style:normal;'>Connexion</router-link></button>
       </div>
     </div>
   
@@ -83,21 +83,6 @@ export default {
     font-size: 280%;
     font-weight:600;
     line-height: 50px;
-  }
-  .text-light{
-    font-size:1em;
-    color: rgba(0, 0, 0, 0.57);
-    font-family:'Source Sans Pro', sans-serif;
-    font-weight:300;
-    font-size: 120%;
-    font-style:normal;
-    line-height: 25px;
-  }
-
-  .text-regular{
-    font-size: 0.9em;
-    font-family: 'Source Sans Pro', sans-serif;
-    font-weight:600;
   }
 
   .labels{
