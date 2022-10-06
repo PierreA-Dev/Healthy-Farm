@@ -1,11 +1,23 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import DashBoard from '../views/DashBoard.vue'
 import CreateAccount from '../views/CreateAccount.vue'
+import PouleView from '../views/PouleView.vue'
+import InfoPouleView from '../views/pouleInfoView.vue'
 
 const routes = [{
         path: '/dashboard',
         name: 'dashboard',
         component: DashBoard
+    },
+    {
+        path: '/poules',
+        name: 'poules',
+        component: PouleView
+    },
+    {
+        path: '/infopoule/:id',
+        name: 'infopoule',
+        component: InfoPouleView
     },
     {
         path: '/create-account',

@@ -41,7 +41,7 @@
 
     <div class='row' style='margin-top:1.2em'>
       <div class='col-12'>
-        <button class='button' type='submit'><router-link to='/DashBoard'>Connexion</router-link></button>
+        <button class='button' type='submit'><router-link to='/DashBoard#goUp'>Connexion</router-link></button>
       </div>
     </div>
   

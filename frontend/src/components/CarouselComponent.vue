@@ -73,5 +73,6 @@ export default {
 }
 .card{
   border-radius: 15px;
+  box-shadow: 2em;
 }
 </style>

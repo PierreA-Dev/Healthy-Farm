@@ -1,5 +1,5 @@
 <template>
-  <div class='container' style='margin-top: 35%;'>
+  <div class='container' style='margin-top: 30%;'>
 
     <div class="row">
       <div class="col">
